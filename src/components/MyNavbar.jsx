@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Navbar, Nav, Form, NavDropdown } from "react-bootstrap";
 import imageProfile from "../assets/avatar.png";
 import Image from "react-bootstrap/Image";
+import { Link } from "react-router-dom";
 
 class MyNavbar extends Component {
   render() {
@@ -51,15 +52,21 @@ class MyNavbar extends Component {
                 menuVariant="dark"
                 drop={"start"}
               >
-                <NavDropdown.Item href="#action/3.1" className="fs-2sm ">
-                  Home
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2" className="fs-2sm ">
-                  Profile
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3" className="fs-2sm ">
-                  Settings
-                </NavDropdown.Item>
+                <Link className="text-decoration-none" to="/">
+                  <NavDropdown.Item href="#action/3.1" className="fs-2sm ">
+                    Home
+                  </NavDropdown.Item>
+                </Link>
+                <Link className="text-decoration-none" to="/MyProfile">
+                  <NavDropdown.Item href="#action/3.2" className="fs-2sm ">
+                    Profile
+                  </NavDropdown.Item>
+                </Link>
+                <Link className="text-decoration-none" to="/MySettings">
+                  <NavDropdown.Item href="#action/3.3" className="fs-2sm ">
+                    Settings
+                  </NavDropdown.Item>
+                </Link>
               </NavDropdown>
             </Form>
           </Navbar.Collapse>

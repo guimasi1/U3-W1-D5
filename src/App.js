@@ -1,19 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Home from "./components/Home";
-// import MyProfile from "./components/MyProfile";
-// import MySettings from "./components/MySettings";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import MyProfile from "./components/MyProfile";
+import MySettings from "./components/MySettings";
 
 function App() {
   return (
     <div className="bg-secondary">
-      <Home />
-      {/* <MyProfile /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/MyProfile" element={<MyProfile />} />
+        <Route path="/MySettings" element={<MySettings />} />
+      </Routes>
     </div>
-    // <div className="bg-secondary">
-    //   <MySettings />
-    // </div>
   );
 }
 
