@@ -61,7 +61,7 @@ class SearchMovie extends Component {
                   controlId="exampleForm.ControlInput1"
                 >
                   <div className="text-center">
-                    <Form.Label>Search Bar</Form.Label>
+                    <Form.Label>Search your movie</Form.Label>
                   </div>
                   <div className="d-flex">
                     <Form.Control
