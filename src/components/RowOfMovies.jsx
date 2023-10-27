@@ -3,11 +3,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SingleMovie from "./SingleMovie";
 import Spinner from "react-bootstrap/Spinner";
+import Alert from "react-bootstrap/Alert";
 
 class RowOfMovies extends Component {
   state = {
     arrayOfMovies: [],
     showSpinner: true,
+    showAlert: false,
   };
 
   getMovies = () => {
@@ -19,6 +21,7 @@ class RowOfMovies extends Component {
           return res.json();
         } else {
           console.log("not ok ");
+          this.setState({ showAlert: true });
           throw new Error("not ok");
         }
       })
@@ -41,6 +44,13 @@ class RowOfMovies extends Component {
         {this.state.showSpinner && (
           <Col xs={12} className="d-flex justify-content-center ">
             <Spinner className="" />
+          </Col>
+        )}
+        {this.state.showAlert && (
+          <Col xs={12}>
+            <Alert variant="danger" className="w-100 text-center">
+              Warning: something went wrong.
+            </Alert>
           </Col>
         )}
         {/* Qua mettere un map per stampare diversi singlemovie */}
