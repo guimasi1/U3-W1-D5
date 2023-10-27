@@ -67,6 +67,11 @@ class MyNavbar extends Component {
                     Settings
                   </NavDropdown.Item>
                 </Link>
+                <Link className="text-decoration-none" to="/SearchMovie">
+                  <NavDropdown.Item href="#action/3.4" className="fs-2sm ">
+                    Search
+                  </NavDropdown.Item>
+                </Link>
               </NavDropdown>
             </Form>
           </Navbar.Collapse>
