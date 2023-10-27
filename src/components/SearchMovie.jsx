@@ -57,7 +57,13 @@ class SearchMovie extends Component {
           <MyNavbar />
           <Row>
             <Col lg={{ span: 6, offset: 3 }} className="text-white ">
-              <Form>
+              <Form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  this.setState({ showSpinner: true });
+                  this.getMovies();
+                }}
+              >
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
