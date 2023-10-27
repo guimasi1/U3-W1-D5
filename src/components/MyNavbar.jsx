@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Container, Navbar, Nav, Form, NavDropdown } from "react-bootstrap";
+import imageProfile from "../assets/avatar.png";
+import Image from "react-bootstrap/Image";
 
 class MyNavbar extends Component {
   render() {
     return (
       <Container className="bg-secondary ps-5 pe-4  ">
-        <Navbar expand="lg" className="fs-2sm">
+        <Navbar expand="lg" className="fs-2sm ">
           <Navbar.Brand id="logo-container">
             <img
               className="w-100"
@@ -40,20 +42,24 @@ class MyNavbar extends Component {
                 <p className="cursor d-inline-block mt-3 text-light">KIDS</p>
                 <i className="cursor bi bi-bell-fill"></i>
               </div>
-              <NavDropdown title="" id="avatar" className="cursor">
-                <img
-                  src="src\Netflix-assets\Netflix-assets\assets\netflix_logo.png"
-                  alt="avatar"
-                  width="100%"
-                  className=""
-                />
-                <NavDropdown.Menu className="bg-dark">
-                  <NavDropdown.Item>Action</NavDropdown.Item>
-                  <NavDropdown.Item>Another action</NavDropdown.Item>
-                  <NavDropdown.Item>Something else here</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item>Separated link</NavDropdown.Item>
-                </NavDropdown.Menu>
+              <div id="image-profile-navbar">
+                <Image src={imageProfile} />
+              </div>
+              <NavDropdown
+                id="nav-dropdown-dark-example"
+                title=""
+                menuVariant="dark"
+                drop={"start"}
+              >
+                <NavDropdown.Item href="#action/3.1" className="fs-2sm ">
+                  Home
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2" className="fs-2sm ">
+                  Profile
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3" className="fs-2sm ">
+                  Settings
+                </NavDropdown.Item>
               </NavDropdown>
             </Form>
           </Navbar.Collapse>

@@ -54,6 +54,8 @@ body {
   font-family: "Inter", sans-serif !important;
 }
 
+// NAVBAR
+
 #logo-container {
   width: 30%;
   @media screen and (min-width: 576px) {
@@ -102,6 +104,16 @@ body {
     width: 8% !important;
   }
 }
+
+#image-profile-navbar {
+  width: 5%;
+  justify-self: end;
+  img {
+    width: 100%;
+  }
+}
+
+//
 
 .cursor {
   cursor: pointer;

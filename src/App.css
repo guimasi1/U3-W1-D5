@@ -80,6 +80,14 @@ body {
   }
 }
 
+#image-profile-navbar {
+  width: 5%;
+  justify-self: end;
+}
+#image-profile-navbar img {
+  width: 100%;
+}
+
 .cursor {
   cursor: pointer;
 }
