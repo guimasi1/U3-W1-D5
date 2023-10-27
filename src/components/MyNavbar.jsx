@@ -14,7 +14,7 @@ class MyNavbar extends Component {
             />
           </Navbar.Brand>
 
-          <Navbar.Toggle />
+          <Navbar.Toggle className="bg-darkgrey" />
           <Navbar.Collapse>
             <Nav className="me-auto mb-2 mb-lg-0">
               <Nav.Item className="cursor">
