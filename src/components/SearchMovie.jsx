@@ -50,11 +50,11 @@ class SearchMovie extends Component {
   render() {
     console.log(this.state.arrayOfMovies, "array movies");
     return (
-      <div className="bg-secondary vh-100 ">
-        <MyNavbar />
-        <Container className="bg-secondary vh-100 ">
+      <main className="bg-secondary vh-100 ">
+        <Container fluid className="bg-secondary">
+          <MyNavbar />
           <Row>
-            <Col className="text-white">
+            <Col lg={{ span: 6, offset: 3 }} className="text-white ">
               <Form>
                 <Form.Group
                   className="mb-3"
@@ -75,7 +75,14 @@ class SearchMovie extends Component {
                         console.log(this.state.searchValue);
                       }}
                     />
-                    <Button onClick={this.getMovies}>Search</Button>
+                    <Button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        this.getMovies();
+                      }}
+                    >
+                      Search
+                    </Button>
                   </div>
                 </Form.Group>
               </Form>
@@ -95,7 +102,7 @@ class SearchMovie extends Component {
             ))}
           </Row>
         </Container>
-      </div>
+      </main>
     );
   }
 }

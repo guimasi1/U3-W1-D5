@@ -39,7 +39,12 @@ class MyNavbar extends Component {
             </Nav>
             <Form className="d-flex align-items-center justify-content-end text-light flex-grow-1 text-end gap-3">
               <div className="gap-3 d-flex align-items-center">
-                <i className="cursor bi bi-search"></i>
+                <Link
+                  to="/SearchMovie"
+                  className="text-decoration-none text-white"
+                >
+                  <i className="cursor bi bi-search"></i>
+                </Link>
                 <p className="cursor d-inline-block mt-3 text-light">KIDS</p>
                 <i className="cursor bi bi-bell-fill"></i>
               </div>
