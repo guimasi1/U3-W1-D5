@@ -5,7 +5,7 @@ import imageProfile from "../assets/avatar.png";
 const MyProfile = () => {
   return (
     <Container>
-      <MyNavbar></MyNavbar>
+      <MyNavbar />
       <main className="bg-secondary">
         <Form>
           <Container className="text-white px-5 pt-5 py-0 text-center text-md-start">
