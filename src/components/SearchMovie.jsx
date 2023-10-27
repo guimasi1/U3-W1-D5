@@ -6,13 +6,15 @@ import Form from "react-bootstrap/Form";
 import SingleMovie from "./SingleMovie";
 import Button from "react-bootstrap/Button";
 import MyNavbar from "./MyNavbar";
+import Alert from "react-bootstrap/Alert";
+import Spinner from "react-bootstrap/Spinner";
 
 class SearchMovie extends Component {
   state = {
     arrayOfMovies: [],
     searchValue: "",
-    // showSpinner: true,
-    // showAlert: false,
+    showSpinner: false,
+    showAlert: false,
   };
 
   getMovies = () => {
@@ -25,11 +27,11 @@ class SearchMovie extends Component {
       .then((res) => {
         if (res.ok) {
           console.log("ok");
-          //   this.setState({ showSpinner: false });
+          this.setState({ showSpinner: false });
           return res.json();
         } else {
           console.log("not ok ");
-          //   this.setState({ showAlert: true });
+          this.setState({ showAlert: true });
           console.log(
             `https://www.omdbapi.com/?apikey=ec74177a&s=${this.state.searchValue.replace(
               / /g,
@@ -78,6 +80,7 @@ class SearchMovie extends Component {
                     <Button
                       onClick={(e) => {
                         e.preventDefault();
+                        this.setState({ showSpinner: true });
                         this.getMovies();
                       }}
                     >
@@ -95,8 +98,18 @@ class SearchMovie extends Component {
             lg={6}
             className="text-center text-md-start text-white"
           >
-            {/* <SingleMovie /> */}
-
+            {this.state.showSpinner && (
+              <Col xs={12} className="d-flex justify-content-center ">
+                <Spinner className="" />
+              </Col>
+            )}
+            {this.state.showAlert && (
+              <Col xs={12}>
+                <Alert variant="danger" className="w-100 text-center">
+                  Warning: something went wrong.
+                </Alert>
+              </Col>
+            )}
             {this.state.arrayOfMovies.map((movie) => (
               <SingleMovie key={movie.imdbID} movie={movie} />
             ))}
