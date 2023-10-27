@@ -111,8 +111,10 @@ const MyProfile = () => {
                         </p>
                         <p className="fs-3sm">
                           Show titles of
-                          <strong>all maturity ratings</strong> for this
-                          profile.
+                          <strong className="ms-1">
+                            all maturity ratings
+                          </strong>{" "}
+                          for this profile.
                         </p>
                         <p className="cursor d-inline-block py-1 px-4 border mb-4 text-grey border-grey">
                           EDIT
